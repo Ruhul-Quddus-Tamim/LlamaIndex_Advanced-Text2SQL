@@ -1,3 +1,11 @@
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=python,sqlite" />
+  </a>
+</p>
+
+---
+
 # Advanced Text2SQL
 
 ### Workflows for Advanced Text-to-SQL
