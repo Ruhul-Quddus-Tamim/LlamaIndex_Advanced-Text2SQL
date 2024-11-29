@@ -106,6 +106,8 @@ Text-to-SQL Workflow:
   
 - Response Delivery: The system presents the final response to the user.
 
+---
+
 ### Diagram
 
 ![Text2SQL drawio](https://github.com/user-attachments/assets/2fb868a0-212b-441c-81e4-a550fafdf9fc)
