@@ -15,7 +15,7 @@ Setup a text-to-SQL workflow over the data with additional techniques:
 1. **Query-Time Table Retrieval**: Dynamically retrieve relevant tables in the text-to-SQL prompt.
 2. **Query-Time Sample Row retrieval**: Embed/Index each row, and dynamically retrieve example rows for each table in the text-to-SQL prompt.
 
-![Text2SQL](https://github.com/user-attachments/assets/ca6e978e-c72a-4e66-ad9d-6251b9ff6ef5)
+![Text2SQL drawio](https://github.com/user-attachments/assets/2fb868a0-212b-441c-81e4-a550fafdf9fc)
 
 
 **NOTE:** Any Text-to-SQL application should be aware that executing 
