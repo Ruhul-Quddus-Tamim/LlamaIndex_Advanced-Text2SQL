@@ -112,6 +112,12 @@ Text-to-SQL Workflow:
 
 ![Text2SQL drawio](https://github.com/user-attachments/assets/2fb868a0-212b-441c-81e4-a550fafdf9fc)
 
+---
+
+### Example output
+
+<img width="1455" alt="Screenshot 2024-11-29 at 16 42 59" src="https://github.com/user-attachments/assets/ca639b63-fdb5-41aa-9c32-ca1ed7d550b7">
+
 
 **NOTE:** Any Text-to-SQL application should be aware that executing 
 arbitrary SQL queries can be a security risk. It is recommended to
