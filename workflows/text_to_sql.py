@@ -44,7 +44,7 @@ class TextToSQLWorkflow(Workflow):
         llm,
         vector_index_dict,
         sql_database,
-        semantic_cache,  # Add semantic_cache parameter
+        semantic_cache,
         verbose=False,
         *args,
         **kwargs,
@@ -58,7 +58,7 @@ class TextToSQLWorkflow(Workflow):
         self.llm = llm
         self.vector_index_dict = vector_index_dict
         self.sql_database = sql_database
-        self.semantic_cache = semantic_cache  # Store the cache
+        self.semantic_cache = semantic_cache
         self._verbose = verbose
 
     @step
