@@ -1,4 +1,5 @@
 import asyncio
+import time
 from constants import TABLE_INDEX_DIR, TABLEINFO_DIR, DATA_DIR, DB_PATH
 from models import TableInfo
 from prompts import (
@@ -26,6 +27,7 @@ from llama_index.core import (
     VectorStoreIndex,
 )
 from llama_index.core.retrievers import SQLRetriever
+from redisvl.extensions.llmcache import SemanticCache
 
 
 async def main():
@@ -97,6 +99,15 @@ async def main():
 
     # Step 8: Initialize the workflow
     llm = OpenAI(model="gpt-4o-mini")
+
+    # Initialize the semantic cache
+    semantic_cache = SemanticCache(
+        name="llmcache",
+        prefix="llmcache",
+        redis_url="redis://localhost:6379",
+        distance_threshold=0.1,
+    )
+
     workflow = TextToSQLWorkflow(
         obj_retriever,
         TEXT_TO_SQL_PROMPT,
@@ -105,13 +116,23 @@ async def main():
         llm,
         vector_index_dict,
         sql_database,
+        semantic_cache=semantic_cache,
         verbose=True,
     )
 
     # Step 9: Run the workflow
-    query = "What was the year that The Notorious B.I.G was signed to Bad Boy?"
-    response = await workflow.run(query=query)
-    print(str(response))
+    while True:
+        query = input("Enter your query (or type 'exit' to quit): ")
+        if query.lower() == "exit":
+            print("Exiting...")
+            break
+
+        start_time = time.time()
+        response = await workflow.run(query=query)
+        end_time = time.time()
+
+        print(f"Response: {str(response)}")
+        print(f"Query executed in {end_time - start_time:.2f} seconds.\n")
 
 
 if __name__ == "__main__":
