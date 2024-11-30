@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=python,sqlite" />
+    <img src="https://skillicons.dev/icons?i=python,sqlite,redis" />
   </a>
 </p>
 
@@ -28,9 +28,29 @@ The project uses the ```WikiTableQuestions``` dataset, which contains various CS
 
 ### Prerequisites
 
+- Docker installed on your system ([Download Docker](https://www.docker.com/products/docker-desktop/)).
 - Python 3.8 or higher
 - OpenAI API Key
 - ```wget``` (for data download)
+
+---
+
+### Steps to Set Up Redis Stack
+
+**1. Pull the Redis Stack Docker Image**
+
+Pull the latest Redis Stack image from Docker Hub:
+```
+docker pull redis/redis-stack-server:latest
+```
+
+**2. Run the Redis Stack Container**
+
+Run the Redis Stack container with port 6379 exposed:
+
+```
+docker run -d --name redis-stack-server -p 6379:6379 redis/redis-stack-server:latest
+```
 
 ---
 
